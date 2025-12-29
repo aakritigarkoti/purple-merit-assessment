@@ -1,8 +1,11 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+// LOCALHOST (Commented out):
+// const API = axios.create({ baseURL: 'http://localhost:5000/api' });
 
-// Add token to every request if it exists
+// LIVE RENDER SERVER:
+const API = axios.create({ baseURL: 'https://purple-merit-assessment-0fx8.onrender.com/api' });
+
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem('token');
   if (token) {
